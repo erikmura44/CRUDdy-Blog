@@ -3,4 +3,6 @@ console.log('environment in knex.js',environment);
 var config = require('../knexfile.js')[environment];
 var knex = require('knex');
 
-module.exports = require('knex')(config);
+let pg = knex(config[env]);
+
+module.exports = pg
