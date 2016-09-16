@@ -1,0 +1,14 @@
+{{#each blogInfo}}
+  <form class="post" action="/{{id}}/editPost" method="post">
+    <label for="title">Title</label>
+    <textarea name="title" id="title" rows="1" class="col-lg-12">{{title}}</textarea>
+    <label for="content">Post Body</label>
+    <textarea name="content" id="content" rows="10" class="col-lg-12">{{blogContent}}</textarea>
+    <label for="image">Image</label>
+    <textarea name="image" id="image" rows="1" class="col-lg-12">{{imageURL}}</textarea>
+    <span>
+      <input type="submit" class="submitEdit btn btn-default" name="BlogEdit" value="Submit Changes">
+      <a href="/{{id}}" class="cancel btn btn-default">Cancel</a>
+    </span>
+  </form>
+{{/each}}

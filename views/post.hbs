@@ -1,0 +1,60 @@
+<nav class="navbar navbar-default">
+  <div class="container-fluid">
+    <!-- Brand and toggle get grouped for better mobile display -->
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+        <img alt="Brand" src="../images/cb.jpeg" class="logo">
+    </div>
+
+    <!-- Collect the nav links, forms, and other content for toggling -->
+    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+      <ul class="nav navbar-nav">
+        <li><a href="/">Read Posts </span></a></li>
+        <li class="active"><a href="/post">Create Post<span class="sr-only">(current)</a></li>
+      </ul>
+      <ul class="nav navbar-nav navbar-right">
+        <li><a href="/register"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>
+        <li><a href="/login"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
+        <li><a href="/logout"><span class="glyphicon glyphicon-log-in"></span> Logout</a></li>
+      </ul>
+    </div><!-- /.navbar-collapse -->
+  </div><!-- /.container-fluid -->
+</nav>
+
+
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-md-10 col-md-offset-1">
+      <h1 class="title-post">{{title}}</h1>
+      <h4 class="header-post">Please use the form below to create a post</h4>
+      <form class="post-blog-form" action="/post" method="POST">
+        <ul>
+          <li>
+            <label for="title">Title</label>
+            <input type="text" name="title" maxlength="100">
+            <span>Blog Title</span>
+          </li>
+          <li>
+            <label for="content">Content</label>
+            <textarea name="content" rows="12"></textarea>
+            <span>The Blog Post Content</span>
+          </li>
+          <li>
+            <label for="imageURL">Add Image</label>
+            <input type="text" name="imageURL">
+            <span>Image URL (eg: http://www.google.com/image2)</span>
+          </li>
+          <li>
+            <input type="submit" class="submit-btn" name="BlogSubmit" value="Submit">
+          </li>
+        </ul>
+      </form>
+
+    </div>
+  </div>
+</div>

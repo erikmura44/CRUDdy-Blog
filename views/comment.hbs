@@ -1,0 +1,25 @@
+<div class="blogs">
+  {{#each blogInfo}}
+    <h3 class="blogTitle">{{title}}</h3>
+    <img class="blogImage" src="{{imageURL}}"/>
+    <p class="content">
+      {{blogContent}}
+    </p>
+  {{/each}}
+</div>
+
+<!-- Comments Section -->
+
+<h5 class="commentHeader">Comments</h5>
+{{#each commentById}}
+  <form class="newComment" action="/{{blog_id}}/{{comment_id}}/editComment" method="post">
+    <div class="commentForm">
+      <h6>Edit Comment:</h6>
+      <textarea name="commentEdit" class="commentArea" rows="8" cols="40">{{comment_content}}</textarea>
+      <span>
+        <input type="submit" class="submitComment btn btn-default" name="submitCommentEdit" value="Edit Comment">
+        <a href="/{{blog_id}}" class="cancel btn btn-default">Cancel</a>
+      </span>
+    </div>
+  </form>
+{{/each}}

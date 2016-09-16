@@ -1,0 +1,45 @@
+<nav class="navbar navbar-default">
+  <div class="container-fluid">
+    <!-- Brand and toggle get grouped for better mobile display -->
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+        <img alt="Brand" src="../images/cb.jpeg" class="logo">
+    </div>
+
+    <!-- Collect the nav links, forms, and other content for toggling -->
+    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+      <ul class="nav navbar-nav">
+        <li class="active"><a href="/">Read Posts <span class="sr-only">(current)</span></a></li>
+        <li><a href="/post">Create Post</a></li>
+      </ul>
+      <ul class="nav navbar-nav navbar-right">
+        <li><a href="/register"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>
+        <li><a href="/login"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
+        <li><a href="/logout"><span class="glyphicon glyphicon-log-in"></span> Logout</a></li>
+      </ul>
+    </div><!-- /.navbar-collapse -->
+  </div><!-- /.container-fluid -->
+</nav>
+<h1 class="title">{{title}}</h1>
+
+
+<div class="container">
+  <div class="row">
+    {{#each blogs}}
+    <div class="col-md-4 col-sm-6 col-lg-4">
+      <h3 class="blog-title">{{title}}</h3>
+      <h6 class="blog-subtitle">Written By: {{user_fullName}}</h6>
+      <div class="image-containter">
+        <img src="{{imageURL}}" class="post-image"/>
+      </div>
+      <p class="dot-ellipsis content">{{content}}</p>
+      <a href="/{{blog_id}}"> Continue Reading... &#8680;</a>
+    </div>
+    {{/each}}
+  </div>
+</div>

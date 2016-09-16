@@ -1,0 +1,88 @@
+<nav class="navbar navbar-default">
+  <div class="container-fluid">
+    <!-- Brand and toggle get grouped for better mobile display -->
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+        <img alt="Brand" src="../images/cb.jpeg" class="logo">
+    </div>
+
+    <!-- Collect the nav links, forms, and other content for toggling -->
+    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+      <ul class="nav navbar-nav">
+        <li class="active"><a href="/">Read Posts <span class="sr-only">(current)</span></a></li>
+        <li><a href="/post">Create Post</a></li>
+      </ul>
+      <ul class="nav navbar-nav navbar-right">
+        <li><a href="/register"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>
+        <li><a href="/login"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
+        <li><a href="/logout"><span class="glyphicon glyphicon-log-in"></span> Logout</a></li>
+      </ul>
+    </div><!-- /.navbar-collapse -->
+  </div><!-- /.container-fluid -->
+</nav>
+
+<!--Content-->
+
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-md-8 col-md-offset-2">
+      {{#each blogInfo}}
+        <h3 class="blog-title">{{title}}</h3>
+        <h6 class="blog-subtitle">Written By: {{user_fullName}}</h6>
+        <div class="image-containter">
+          <img src="{{imageURL}}" class="post-image"/>
+        </div>
+        <p class="full-content">{{blogContent}}</p>
+        <p><a href="/{{id}}/editPost">Edit This Post</a></p>
+        <p><a href="/{{id}}/deletePost">Delete This Post</a></p>
+      {{/each}}
+    </div>
+  </div>
+</div>
+
+
+<!-- New Comment Form -->
+
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-md-8 col-md-offset-2">
+      <form class="post-blog-form" action="/{{blog_id}}" method="POST">
+        <ul>
+          <li>
+            <label for="comment">Comment</label>
+            <textarea name="comment" rows="3" placeholder="First!"></textarea>
+            <span>Enter Your Comment Here</span>
+          </li>
+          <li>
+            <input type="submit" class="submit-btn" name="CommentSubmit" value="Submit">
+          </li>
+        </ul>
+      </form>
+    </div>
+  </div>
+</div>
+<!-- Comments Section -->
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-md-8 col-md-offset-2">
+      <h5 class="comments-header">Comments</h5>
+        {{#if comments}}
+        {{#each comments}}
+          <div>
+            <h6 class="commentUser">{{comment_user}}</h6>
+            <p>{{comment_content}}</p>
+            <p><a href="/{{blog_id}}/{{comment_id}}/editComment">Edit</a></p>
+            <p><a href="/{{blog_id}}/{{comment_id}}/deleteComment">Delete</a></p>
+          </div>
+          {{/each}}
+          {{else}}
+            <h6>Be the first to leave a comment!</h6>
+          {{/if}}
+    </div>
+  </div>
+</div>
