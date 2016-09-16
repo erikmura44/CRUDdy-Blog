@@ -1,9 +1,8 @@
-'use strict'
 var express = require('express');
 var router = express.Router();
 var passport = require('../passport');
 var query = require('../queries.js');
-var pg = require('../db/knex_config.js')
+
 
 
 //----------LOGIN----------//
