@@ -11,9 +11,6 @@ passport.use(new Local(function(username, password, done){
       //Throw Error Page
       done(new Error('incorrect username/password'));
       return;
-      // Do not show error and just redirect to main page
-      // done(null,false);
-      // To show incorrect/invalid login and/or password on the main page, create javascript file in the public directly that will call $post on the post of that form and then use jquery to show that it was an incorrect login/password
     }
     query.find(username)
     .then(function(user){

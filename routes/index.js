@@ -22,7 +22,7 @@ router.get('/logout', function(req,res){
   res.redirect('/login');
 });
 
-// Get Blogs //
+//----------Get Blogs----------//
 router.get('/', function(req, res, next) {
   query.getBlogs()
   .then(function(blogData){
@@ -82,6 +82,18 @@ router.post('/post', function(req,res,next){
     .then(function(){
       res.redirect('/');
     });
+  });
+});
+
+//----------CHAT----------//
+router.get('/chat', function(req,res,next){
+  if(!req.isAuthenticated()){
+    res.redirect('/login');
+    return;
+  }
+  query.findUserInformation(req.user.username)
+  .then(function(userInfo){
+    res.render('chat', {user_fullName: userInfo.fullName, user_username: userInfo.username});
   });
 });
 
@@ -239,5 +251,8 @@ router.get('/:blogid/:commentid/deleteComment', function(req,res,next){
     });
   });
 });
+
+
+
 
 module.exports = router;

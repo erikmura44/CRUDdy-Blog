@@ -57,6 +57,7 @@ html, body {
 .col-md-8, .col-md-offset-2 {
     background-color: white;
     border-radius: 5px;
+    border-color: grey;
     padding: 29px 40px 20px 40px;
 }
 
@@ -142,4 +143,19 @@ html, body {
 .post-blog-form input[type="button"]:hover{
     background: #00a415;
     color:#FFFFFF;
+}
+
+
+/*Chat*/
+
+.messages{
+  list-style-type: none; margin: 0; padding: 0;
+}
+
+.messages li{
+  padding: 5px 10px;
+}
+
+.messages li:nth-child(odd){
+  background: #eee;
 }

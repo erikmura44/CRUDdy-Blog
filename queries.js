@@ -41,7 +41,7 @@ function addUser(username,password,fullName){
     if(data){
       return false;
     }
-    return knex('user').insert({username: username, password: hashPassword(password),admin:true,fullName:fullName});
+    return knex('user').insert({username: username, password: hashPassword(password),fullName:fullName});
   })
   .catch(function(err){
     return err;
