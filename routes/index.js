@@ -5,13 +5,15 @@ var query = require('../queries.js');
 
 //----------LOGIN----------//
 router.get('/login', function(req,res,next){
-  res.render('login', {title: 'CRUDdy-Blog'});
+  res.render('login', {
+    title: 'CRUDdy-Blog'
+  });
 });
 
 router.post('/login', passport.authenticate('local', {
   successRedirect: '/',
   failureRedirect: '/login'
-})
+  })
 );
 
 //----------LOGOUT----------//
@@ -33,7 +35,9 @@ router.get('/', function(req, res, next) {
 
 //----------REGISTER----------//
 router.get('/register', function(req,res,next){
-  res.render('register', {title: 'CRUDdy-Blog'});
+  res.render('register', {
+    title: 'CRUDdy-Blog'
+  });
 });
 
 router.post('/register', function(req,res,next){
