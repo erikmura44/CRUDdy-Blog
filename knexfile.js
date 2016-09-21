@@ -1,8 +1,5 @@
-// Update with your config settings.
-if(!process.env.NODE_ENV){
-  require('dotenv').config();
-}
 var dotenv = require('dotenv').config()
+
 module.exports = {
 
   development: {

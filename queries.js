@@ -78,7 +78,7 @@ function createComment(user_id,blog_id,content,user_fullName){
 }
 
 function editBlogPost(blog_id,title,content,image){
-  return knex('blog').update({title:title, content:content, imageURL:image,}).where('id',blog_id);
+  return knex('blog').update({title:title, content:content, imageURL:image}).where('id',blog_id);
 }
 
 function deleteComments(blog_id){

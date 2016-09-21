@@ -3,8 +3,6 @@ var router = express.Router();
 var passport = require('../passport');
 var query = require('../queries.js');
 
-
-
 //----------LOGIN----------//
 router.get('/login', function(req,res,next){
   res.render('login', {title: 'CRUDdy-Blog'});
